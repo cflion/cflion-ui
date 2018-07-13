@@ -8,12 +8,15 @@ module.exports = merge(webpackConfig, {
     mode: 'development',
     entry: [
         'react-hot-loader/patch', // activate HMR for React
-        'webpack-dev-server/client?http://localhost:8080',// bundle the client for webpack-dev-server and connect to the provided endpoint
+        'webpack-dev-server/client?http://0.0.0.0:8082/',   // bundle the client for webpack-dev-server and connect to the provided endpoint
         'webpack/hot/only-dev-server', // bundle the client for hot reloading, only- means to only hot reload for successful updates
         paths.appIndexJs // the entry point of our app
     ],
     devServer: {
         hot: true, // enable HMR on the server
+        host: '0.0.0.0',
+        port: 8082,
+        historyApiFallback: true,
     },
     devtool: 'cheap-module-eval-source-map',
     plugins: [
