@@ -1,118 +1,100 @@
 import React, {Component} from 'react';
 
-import { Table, Icon, Divider } from 'antd';
+import { Table, Divider } from 'antd';
 
 const { Column } = Table;
 
 import './service.css';
 
-
-/*const columns = [{
-    title: '#',
-    dataIndex: '#',
-    key: '#',
-}, {
-    title: 'Service',
-    dataIndex: 'Service',
-    key: 'Service',
-}, {
-    title: 'Environment',
-    dataIndex: 'Environment',
-    key: 'Environment',
-}, {
-    title: 'Config Files',
-    dataIndex: 'Config Files',
-    key: 'Config Files',
-}, {
-    title: 'Operation',
-    key: 'Operation',
-    render: (text, record) => (
-        <span>
-          <a href="javascript:;">show</a>
-          <Divider type="vertical" />
-          <a href="javascript:;">latest</a>
-        </span>
-    ),
-}];*/
-
-/*const data = [{
-    key: '0',
-    '#': 0,
-    Service: 'zd_base_upload',
-    Environment: 'dev',
-    'Config Files': 1,
-}, {
-    key: '1',
-    '#': 1,
-    Service: 'zd_base_upload',
-    Environment: 'dev',
-    'Config Files': 1,
-}, {
-    key: '2',
-    '#': 2,
-    Service: 'zd_base_upload',
-    Environment: 'dev',
-    'Config Files': 1,
-}];*/
-
 const data = [{
-    key: '1',
-    firstName: 'John',
-    lastName: 'Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
+    key: 0,
+    xuHao: 0,
+    service: 'zd_base_upload',
+    environment: 'dev',
+    configFiles: 1,
+    comment:'备注'
 }, {
-    key: '2',
-    firstName: 'Jim',
-    lastName: 'Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
+    key: 1,
+    xuHao: 1,
+    service: 'zd_base_pays',
+    environment: 'dev',
+    configFiles: 2,
+    comment:'备注'
 }, {
-    key: '3',
-    firstName: 'Joe',
-    lastName: 'Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
+    key: 2,
+    xuHao: 2,
+    service: 'zd_base_start',
+    environment: 'dev',
+    configFiles: 1,
+    comment:'备注'
 }];
 
 export default class ServiceList extends Component {
+
+    _addService = () => {
+        this.props.history.push('/Service/Add')
+    };
+
+    _checkService = () => {
+        this.props.history.push('/Service/Check')
+    };
+
+    _editService = () => {
+        this.props.history.push('/Service/Edit')
+    };
+
+    _delService = () => {
+        this.props.history.push('/Service/Del')
+    };
+
     render (){
         return (
             <div>
-                <h1 style={{fontSize:'35px',color:'#333333'}}>Service List</h1>
-                <Table dataSource={data}>
+                <h1 className="service-title">配置列表</h1>
+                <Table
+                    dataSource={data}
+                    pagination={false}
+                >
                     <Column
-                        title="First Name"
-                        dataIndex="firstName"
-                        key="firstName"
+                        title="#"
+                        dataIndex="xuHao"
+                        key="xuHao"
                     />
                     <Column
-                        title="Last Name"
-                        dataIndex="lastName"
-                        key="lastName"
+                        title="Service"
+                        dataIndex="service"
+                        key="service"
                     />
                     <Column
-                        title="Age"
-                        dataIndex="age"
-                        key="age"
+                        title="Environment"
+                        dataIndex="environment"
+                        key="environment"
                     />
                     <Column
-                        title="Address"
-                        dataIndex="address"
-                        key="address"
+                        title="Config Files"
+                        dataIndex="configFiles"
+                        key="configFiles"
+                    />
+                    <Column
+                        title="Comment"
+                        dataIndex="comment"
+                        key="comment"
                     />
                     <Column
                         title="Action"
                         key="action"
                         render={(text, record) => (
                             <span>
-                            <a href="javascript:;" onClick={()=>this.props.history.push('/')}>Action 一 {record.name}</a>
-                            <Divider type="vertical" />
-                            <a href="javascript:;">Delete</a>
-                        </span>
+                                <a href="javascript:;" onClick={this._checkService}>查看</a>
+                                <Divider type="vertical" />
+                                <a href="javascript:;" onClick={this._editService}>编辑</a>
+                                <Divider type="vertical" />
+                                <a href="javascript:;" onClick={this._delService}>删除</a>
+                            </span>
                         )}
                     />
                 </Table>
+                <div className="add-row"><a href="javascript:;" onClick={this._addService}>新增配置</a></div>
             </div>
         )
     }

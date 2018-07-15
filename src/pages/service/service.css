@@ -1,0 +1,55 @@
+
+.service-box {
+    width: 60%;
+    margin: 0 auto;
+}
+.service-title{
+    font-size:35px;
+    color:#333333;
+    text-align: center;
+}
+.add-row{
+    height: 40px;
+    line-height: 40px;
+    text-align:center;
+    font-size: 16px;
+    background-color: #fafafa;
+}
+
+.header-menu{
+    height:40px;
+    line-height: 40px;
+    background-color:#fafafa;
+}
+.header-menu a{
+    color:#11b6f8;
+    font-size: 15px;
+}
+
+.input-ui {
+    margin-bottom: 30px;
+}
+
+.input-ui label {
+    font-size: 20px;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
+.submit-btn{
+    margin: 30px 0;
+    text-align: center;
+}
+.submit-btn button{
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #11b6f8;
+    color:#fff;
+    font-size: 16px;
+    text-align: center;
+}

@@ -1,44 +1,38 @@
-.welcome-page{
+#root{
+    width:100%;
+    height:100%;
 }
-.welcome-bg {
+.welcome-page{
     width: 100%;
     height: 100%;
-    background-image:url("./resources/welcome_bg.jpeg");
+    display: table;
+    background-image:url("./resources/welcome_bg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index: 1;
 }
 .welcome-content{
-    position: absolute;
-    z-index: 2;
-    width: 100%;
+    display: table-cell;
+    vertical-align:middle;
 }
 .welcome-content h1 {
     font-size: 40px;
     color: #333333;
     text-align: center;
-    margin-top: 350px;
 }
 .welcome-content p{
     font-size: 20px;
     color: #333333;
     text-align: center;
+    padding: 30px 0;
 }
 .welcome-content button{
     padding: 10px 20px;
     font-size: 20px;
     color:#999999;
-    margin: 30px auto 0;
+    margin: 0 auto;
     width: 200px;
     display: block;
     border: 1px solid #999999;
+    cursor: pointer;
 }

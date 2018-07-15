@@ -12,6 +12,11 @@ module.exports = merge(webpackConfig, {
         'webpack/hot/only-dev-server', // bundle the client for hot reloading, only- means to only hot reload for successful updates
         paths.appIndexJs // the entry point of our app
     ],
+    output: {
+        filename: 'js/dist.[hash].min.js',
+        path: paths.appDist,
+        publicPath: '/',
+    },
     devServer: {
         hot: true, // enable HMR on the server
         host: '0.0.0.0',

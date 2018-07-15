@@ -12,26 +12,33 @@ import store, {history} from './configureStore';
 
 import Welcome from './Welcome';
 import {
-    ServiceList
+    ServiceList,
+    AddService,
 } from './pages'
 
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <Provider store={store}>
-                    <ConnectedRouter history={history}>
-                        <Switch>
-                            <Route exact path="/" render={() => (
-                                <Redirect to="Welcome"/>
-                            )}/>
-                            <Route exact path="/Welcome" component={Welcome}/>
-                            <Route path="/ServiceList" component={ServiceList}/>
-                        </Switch>
-                    </ConnectedRouter>
-                </Provider>
-            </div>
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    <Switch>
+                        <Route exact path="/" render={() => (
+                            <Redirect to="Welcome"/>
+                        )}/>
+                        <Route path="/Welcome" component={Welcome}/>
+                        <Route path="/Service/:type" render={props => {
+                            let type = props.match.params.type;
+                            if (type === 'List') {
+                                return (<ServiceList {...props}/>)
+
+                            } else if (type === 'Add') {
+                                return (<AddService {...props}/>)
+                            }
+                        }}/>
+                    </Switch>
+                </ConnectedRouter>
+            </Provider>
         );
     }
 }
