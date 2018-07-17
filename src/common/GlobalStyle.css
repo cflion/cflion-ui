@@ -1,0 +1,29 @@
+html, body, div, object, pre, code, h1, h2, h3, h4, h5, h6, p, span, em,
+cite, del, a, img, ul, li, ol, dl, dt, dd, fieldset, legend, form,
+input, button, textarea, header, section, footer, article, nav, aside,
+menu, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+button, input {
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+body {
+    margin: 0;
+}
+
+a {text-decoration: none;}
+em,i{font-style: normal;}
+em, strong {font-style: normal;}
+ul, ol, ul li{ list-style: none; }
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+table { border-collapse: collapse; border-spacing: 0; }
+input, textarea, select { padding: 0;-webkit-box-shadow: none;-webkit-appearance:none} /*屏蔽阴影:在iOS上，输入框默认有内部阴影*/
+button,input,textarea {border: none;background: none;-webkit-appearance: none;outline: none;}
+::-webkit-input-placeholder {color: #dddddd;}/*修改input属性placeholder默认颜色*/
