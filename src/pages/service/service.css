@@ -1,4 +1,10 @@
-
+.weather{
+    font-size: 16px;
+    color: #11b6f8;
+    text-align: right;
+    padding: 10px;
+    cursor: pointer;
+}
 .service-box {
     width: 60%;
     margin: 0 auto;

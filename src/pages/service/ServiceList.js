@@ -65,6 +65,10 @@ class ServiceList extends Component {
         });
     };
 
+    _checkWeather = () => {
+        this.props.history.push('/Weather')
+    };
+
     render (){
         let service = this.props.service, _data = [];
         if (service) {
@@ -75,6 +79,7 @@ class ServiceList extends Component {
 
         return (
             <div>
+                <div className="weather" onClick={this._checkWeather}>查询天气</div>
                 <h1 className="service-title">配置列表</h1>
                 <Table
                     dataSource={this.state.data.length > 0 ? this.state.data : _data}

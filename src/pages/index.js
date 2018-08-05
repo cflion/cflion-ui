@@ -5,10 +5,15 @@ import {
     CheckService,
 } from './service'
 
+import {
+    Weather
+} from './weather'
+
 
 export {
     ServiceList,
     AddService,
     EditService,
-    CheckService
+    CheckService,
+    Weather
 }

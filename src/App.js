@@ -8,7 +8,7 @@ import {Route, Redirect, Switch} from 'react-router-dom';
 
 import {ConnectedRouter} from 'react-router-redux'
 
-import store, {history} from './configureStore';
+import store, {history} from './store';
 
 import Welcome from './Welcome';
 import {
@@ -16,6 +16,7 @@ import {
     AddService,
     EditService,
     CheckService,
+    Weather
 } from './pages'
 
 
@@ -29,6 +30,7 @@ class App extends Component {
                             <Redirect to="Welcome"/>
                         )}/>
                         <Route path="/Welcome" component={Welcome}/>
+                        <Route path="/Weather" component={Weather}/>
                         <Route path="/Service/:type" render={props => {
                             let type = props.match.params.type;
                             if (type === 'List') {
