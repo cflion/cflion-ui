@@ -1,0 +1,4 @@
+export const ADD_SERVICE = 'ADD_SERVICE';
+export const REMOVE_SERVICE = 'REMOVE_SERVICE';
+export const EDIT_SERVICE = 'EDIT_SERVICE';
+export const CHECK_SERVICE = 'CHECK_SERVICE';
